@@ -2554,7 +2554,8 @@
         before: '\u20AA'
       },
       INR: {
-        before: 'Rs.'
+        before: 'Rs.',
+        after: ''
       },
       ISK: {
         before: 'kr'
@@ -2659,11 +2660,12 @@
 
 
     module.exports = function currency(amount, config) {
-      var code = config && config.currency || 'USD',
+      //var code = config && config.currency || 'INR',
+      var code = 'INR',
         value = currencies[code],
         before = value.before || '',
         after = value.after || '',
-        length = value.length || 2,
+        length = value.length || 0,
         showCode = value.code && config && config.showCode,
         result = amount;
 
